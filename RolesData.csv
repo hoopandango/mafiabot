@@ -1,0 +1,31 @@
+name,faction,roletype,unique
+Jailor,T,K,True
+Vigilante,T,K,False
+Veteran,T,K,True
+Spy,T,I,False
+Psychic,T,I,False
+Investigator,T,I,False
+Cupid,T,I,False
+Lookout,T,I,False
+Doctor,T,P,False
+Bodyguard,T,P,False
+Builder,T,P,True
+Mayor,T,S,True
+Medium,T,S,True
+Escort,T,S,False
+Drunk,T,S,False
+Retributionist,T,S,True
+Alphawolf,W,K,True
+Wolf Apprentice,W,K,True
+Wolf Knight,W,P,True
+Consigliere Wolf,W,K,False
+Blackmailer Wolf,W,I,False
+Janitor Wolf,W,S,True
+Butler Wolf,W,S,False
+Alcoholic Wolf,W,S,False
+Serial Killer,K,K,True
+Fool,N,S,False
+Guardian Angel,N,P,True
+Headhunter,N,I,False
+Potion Master,N,P,False
+Amnesiac,N,S,False
