@@ -1,0 +1,10 @@
+count,roles
+8,RT;RT;RT;RT;RT;Alphawolf;WW;N
+9,RT;RT;RT;RT;RT;RT;Alphawolf;WW;WW
+10,TI;TP;TS;RT;RT;RT;Alphawolf;WW;WW;N
+11,TK;TI;TP;TS;RT;RT;RT;Alphawolf;WW;WW;N
+12,Jailor;TI;TI;TP;TS;RT;RT;RT;Alphawolf;Wolf Apprentice;WW;WW
+13,Jailor;TI;TI;TP;TS;RT;RT;RT;Alphawolf;Wolf Apprentice;WW;WW;N
+14,Jailor;TI;TI;TP;TP;TS;RT;RT;RT;Alphawolf;Wolf Apprentice;WW;WW;NK
+15,Jailor;TK;TI;TI;TP;TP;TS;RT;RT;Alphawolf;Wolf Apprentice;WW;WW;N;NK
+16,Jailor;TK;TI;TI;TP;TP;TS;RT;RT;Alphawolf;Wolf Apprentice;WW;WW;WW;N;NK
