@@ -70,7 +70,7 @@ def playersStatus():
   return output
 
 def setDefaultPlayers():
-  pl = ["Bahamut#6969", "rii#0313","KingdomClasher#9388","ap_G#9765","HiHi1212#7777","weefyeet#5721","Era#4108","Bhand#4260","Cont#2371","Deanx#7687","shaggy#5405","PMC#5844","LordBlu144#1105","Mafira1071#0618","Almighty Poseidon#4897","Pandango#6819" ]
+  pl = ["a", "b","c","d","e","f","g","h","i","j","k","l","m","n","o","p" ]
   players = pl[0:playercount]
 
 def addPlayer(player):
