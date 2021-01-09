@@ -6,7 +6,7 @@ roles = []  # List of roles in current game
 allRolelists = {} # Collection of all rolelists
 rolelist = [] # Rolelist used in current game
 allRoles = [] # List of all roles [each role is a dictionary]
-playercount = 0 # Number of players
+playercount = 10 # Number of players
 
 def clean():
   global roles
@@ -38,23 +38,40 @@ def setAllRolelists():
       allRolelists[row["count"]] = row["roles"].split(";")
 
 def setRolelist(playercount):
-    if(playercount >= 8 and playercount <= 16):
-      global rolelist 
-      rolelist = allRolelists[str(playercount)]
+  if(playercount >= 8 and playercount <= 16):
+    global rolelist 
+    rolelist = allRolelists[str(playercount)]
+
+def getRolelist():
+  setRolelist(playercount)
+  output = "------------Rolelist-------------\n"
+  for role in rolelist:
+    output += role+"\n"
+  output += "\n"
+  return output
 
 def setPlayercount(num):  
   global playercount 
   playercount = num
+
+def getPlayers():
+  output = "------------Players-------------\n"
+  for player in players:
+    output += (player+"\n")
+  output += "\n"
+  return output
 
 def addPlayer(playerlist):
   global players
   playerarray = playerlist.split(',')
   if(len(players)+len(playerarray) <= playercount):
     players += playerarray
+  return str(len(playerarray))
 
 def setDefaultPlayers():
+  pl = ["Bahamut#6969", "rii#0313","KingdomClasher#9388","ap_G#9765","HiHi1212#7777","weefyeet#5721","Era#4108","Bhand#4260","Cont#2371","Deanx#7687","shaggy#5405","PMC#5844","LordBlu144#1105","Mafira1071#0618","Almighty Poseidon#4897","Pandango#6819" ]
   global players 
-  players = string.ascii_uppercase[0:playercount]
+  players = pl[0:playercount]
 
 def setRoles(rolelist): #sets roles to roles[]
   rolechoices= []  #roles that can be set in a slot
@@ -93,20 +110,25 @@ def playersStatus():
   if (len(players) == 0):
     output += ("------------Enter " + str(playercount) + " Players------------- \n") 
   elif(len(players) == playercount):
-    output += printRolelist(players)
+    output += makeRolelist()
   else:
     output += ("need " + str(playercount - len(players)) + " more players \n")
   return output
 
-def printRolelist(players):
-  output = ""
-  clean()
-  output += ("------------Roles-------------\n") 
-  c = 0 
+def makeRolelist():
+  global players
   global roles 
+  clean()
   roles = setRoles(rolelist)
   random.shuffle(players)
+  return printRolelist()
+
+def printRolelist():
+  output = ""
+  output += ("------------Roles-------------\n") 
+  c = 0 
   for entry in rolelist:
-    output += (entry + " - " + players[c]+ " (" +roles[c]+")\n") 
+    output += (str(c) + " " + entry + " - " + players[c]+ " (" +roles[c]+")\n") 
     c+=1 
+  output += "\n"
   return output
