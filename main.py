@@ -13,7 +13,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author == client.user: # Doesn't respond to self
         return
 
     if message.content.startswith('-cleanjail') and message.author.name == "Pandango":
@@ -54,6 +54,9 @@ async def on_message(message):
         setPlayercount(n)
         await message.channel.send("Player count is now "+str(n))
 
+    elif message.content.startswith('-print'):
+        await message.channel.send(printRolelist())
+
     elif message.content.startswith('-rolelist'):
         await message.channel.send(getRolelist())
 
@@ -69,6 +72,17 @@ async def on_message(message):
 
     elif message.content.startswith('-plist'):
         await message.channel.send(getPlayers())
+
+    elif message.content.startswith('-rig'):
+        msg = message.content[5:].split(',')
+        await message.channel.send(rig(int(msg[0]),msg[1]))
+
+    elif message.content.startswith('-swap'):
+        msg = message.content[6:].split(',')
+        await message.channel.send(swap(int(msg[0]),int(msg[1])))
+
+    elif message.content.startswith('-sort'):
+        await message.channel.send(sort())
 
     
 client.run('<token goes here>')
